@@ -32,3 +32,8 @@ var minPathSum = function(grid) {
 };
 // @lc code=end
 
+// dp[i][j] 表示从起点到坐标（i, j）的最短路径
+// dp[0][0] = 0
+// dp[i][j] = dp[i - 1][j] + grid[i][j], j = 0;
+//            dp[i][j - 1] + grid[i][j], i = 0;
+//            min{dp[i - 1][j], dp[i][j - 1]} + grid[i][j], i != 0 && j != 0;

@@ -28,3 +28,6 @@ var uniquePaths = function(m, n) {
 };
 // @lc code=end
 
+// dp[i][j] 表示起点到坐标（i,j）的不同路线数量
+// dp[i][0] = dp[0][j] = 1
+// dp[i][j] = dp[i - 1][j] + dp[i][j - 1]

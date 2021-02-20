@@ -26,3 +26,6 @@ var findLongestChain = function(pairs) {
 };
 // @lc code=end
 
+// dp[i] 表示以该索引元素为结尾的最长链长度
+// dp[0] = 1
+// dp[i] = max{1, dp[j] + 1 | S[i][0] > S[j][0] && i > j}

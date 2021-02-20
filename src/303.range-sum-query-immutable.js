@@ -4,16 +4,15 @@
  * [303] Range Sum Query - Immutable
  */
 
-let sums;
 // @lc code=start
 /**
  * @param {number[]} nums
  */
 var NumArray = function(nums) {
     const n = nums.length;
-    sums = new Array(n + 1).fill(0);
+    this.sums = new Array(n + 1).fill(0);
     for (let i = 1; i <= n; i++) {
-      sums[i] = sums[i - 1] + nums[i - 1];
+      this.sums[i] = this.sums[i - 1] + nums[i - 1];
     }
 };
 
@@ -23,7 +22,7 @@ var NumArray = function(nums) {
  * @return {number}
  */
 NumArray.prototype.sumRange = function(i, j) {
-  return sums[j + 1] - sums[i];
+  return this.sums[j + 1] - this.sums[i];
 };
 
 /** 
