@@ -29,3 +29,7 @@ var canPartition = function(nums) {
 };
 // @lc code=end
 
+// sums(p) 为整数队列和，sum(n) 为负数队列和
+// sums(p) - sums(n) = target
+// sums(p) - sums(n) + sums(p) + sums(n) = target + sums(s)
+// sums(p) = (target + sums(s)) * 2;
