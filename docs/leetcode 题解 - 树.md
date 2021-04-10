@@ -1,5 +1,5 @@
-# leetcode 题解 - Tree
-- [leetcode 题解 - Tree](#leetcode-题解---tree)
+# leetcode 题解 - 树
+- [leetcode 题解 - 树](#leetcode-题解---树)
   - [递归](#递归)
     - [104. Maximum Depth of Binary Tree](#104-maximum-depth-of-binary-tree)
     - [110. Balanced Binary Tree](#110-balanced-binary-tree)
@@ -183,6 +183,8 @@ A **leaf** is a node with no children.
 
 使用递归求解，从根节点开始进行层次遍历，判断左右子树是否存在路径和是否等于目标值减去父节点的值。
 
+**代码实现**
+
 ```js
 var hasPathSum = function(root, targetSum) {
     if (root === null) return false;
@@ -238,6 +240,8 @@ Given two **non-empty** binary trees **s** and **t**, check whether tree **t** h
 
 通过递归层次遍历二叉树，查找是否有与目标树存在全等关系的子树。
 
+**代码实现**
+
 ```js
 var isSubtree = function(s, t) {
     if (s === null) return false;
@@ -292,6 +296,8 @@ The minimum depth is the number of nodes along the shortest path from the root n
 
 通过递归层次遍历二叉树求解所有根节点到叶子节点的路径长度，取其中最小长度。
 
+**代码实现**
+
 ```js
 var minDepth = function(root) {
     if (root === null) return 0;
@@ -339,6 +345,8 @@ Given the `root` of a binary tree, return *the length of the longest path, where
 **解题思路**
 
 通过递归层次遍历二叉树，递归栈保存上层节点的左右子树中相同节点值的最大路径长度`left`和`right`，判断遍历节点的左节点的值是否等于父节点的值，如果等于则`left+1`,否则`left`重置为0，同理判断右节点，比较所有`left`与`right`的和，取其中的最大值。
+
+**代码实现**
 
 ```js
 var longestUnivaluePath = function(root) {
@@ -428,7 +436,7 @@ Given the `root` of a binary tree, return the leftmost value in the last row of 
 
 从右往左进行进行层次遍历，最后一个遍历节点为二叉树左下角节点。
 
-**代码实现*
+**代码实现**
 
 ```js
 var findBottomLeftValue = function(root) {
@@ -447,6 +455,8 @@ var findBottomLeftValue = function(root) {
 ## 深度遍历
 
 ### [144. Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/description/)
+
+前序遍历
 
 **代码实现**
 
@@ -482,6 +492,8 @@ var preorderTraversal = function(root) {
 ```
 
 ### [94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/description/)
+
+中序遍历
 
 **代码实现**
 
@@ -520,6 +532,8 @@ var inorderTraversal = function(root) {
 ```
 
 ### [145. Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/description/)
+
+后续遍历
 
 **代码实现**
 
