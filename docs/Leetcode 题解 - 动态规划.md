@@ -36,7 +36,7 @@ Return *the maximum product you can get*.
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-1618159633897.jpg" style="width:50%;" />
+<img src="assets/image-1618159633897.jpg" style="width:400px;" />
 </div>
 
 即首先将`i`分割成两部分：j和(i - j)，其中j表示不可分割整数数，(i - j)表示可分割整数，则dp[i]等于整数(i - j)的最大分割方式的乘积与整数j的乘积，得到dp[i] = max(dp[i - j] * j)，另外还需要考虑一种情况，就是不对(i - j)进行分割，得到dp[i] = (i - j) * j，最终得到以上方程；
@@ -74,7 +74,7 @@ A **perfect square** is an integer that is the square of an integer; in other wo
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-1618159975887.jpg" style="width:50%;" />
+<img src="assets/image-1618159975887.jpg" style="width:400px;" />
 </div>
 
 即将整数i分割成两部分：square和(i -square)，其中square表示一个平方数(j * j)，则dp[i]等于整数(i - j * j)的最少分割平方数的数量+1，然后比较以上所有的分割方式的分割数量大小，数量最少的分割方式为分割整数i的最优解。
@@ -113,7 +113,7 @@ Given encoded message "12", it could be decoded as "AB" (1 2) or "L" (12).
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-1618160084752.jpg" style="width:50%;" />
+<img src="assets/image-1618160084752.jpg" style="width:400px;" />
 </div>
 
 对于每个数字，只能有两种解码方式，即其本身或与其前一位数字组成的十位数。那么如果s[i]在[1-9]之间，dp[i] += dp[i - 1]，如果s[i - 1] + s[i]在[10-26]之间，dp[i] += dp[i - 2]（此处并未排除字符串s全是0的情况）。
@@ -164,7 +164,7 @@ A **subsequence** is a sequence that can be derived from an array by deleting so
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-1618160295367.jpg" style="width:50%;" />
+<img src="assets/image-1618160295367.jpg" style="width:400px;" />
 </div>
 
 对于一个递增子序列{Si1, Si2,...,Sim-1, Sn}，如果im < n并且Sim < Sn, 此时{Si1, Si2,..., Sim, Sn} 为一个递增子序列，递增子序列的长度+1。因此dp[i]的最优解为max(dp[j] + 1 | Sj < Si, i < n)。
@@ -213,7 +213,7 @@ Given a set of pairs, find the length longest chain which can be formed. You nee
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-1618160491891.jpg" style="width:50%;" />
+<img src="assets/image-1618160491891.jpg" style="width:400px;" />
 </div>
 
 分析方法与上题差不多，具体不再进行赘述。
@@ -254,7 +254,7 @@ Given a sequence of integers, return the length of the longest subsequence that 
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-1618160611809.jpg" style="width:50%;" />
+<img src="assets/image-1618160611809.jpg" style="width:400px;" />
 </div>
 
 up[n]和down[n]中的最大值为最优解。
@@ -295,7 +295,7 @@ Given two strings `text1` and `text2`, return *the length of their longest **com
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-1618160788580.jpg" style="width:50%;" />
+<img src="assets/image-1618160788580.jpg" style="width:400px;" />
 </div>
 
 **代码实现**
@@ -327,7 +327,7 @@ var longestCommonSubsequence = function(text1, text2) {
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-20210412011532593.png" alt="image-20210412011532593" style="width:50%;" />
+<img src="assets/image-20210412011532593.png" alt="image-20210412011532593" style="width:400px;" />
 </div>
 
 其中最长公共子串未必是以Sn为结尾，因此最长公共子串长度等于二维数组dp中的最大值。
@@ -376,7 +376,7 @@ var longestCommonSubstring = function(text1, text2) {
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-20210412012325796.png" alt="image-20210412012325796" style="width:50%;" />
+<img src="assets/image-20210412012325796.png" alt="image-20210412012325796" style="width:400px;" />
 </div>
 
 空间优化：
@@ -386,7 +386,7 @@ var longestCommonSubstring = function(text1, text2) {
 其中dp[j]既可以表示`dp[i-1][j]`也可以表示`dp[i][j]`，此状态转移方程为：
 
 <div align="center">
-<img src="assets/image-20210412012355397.png" alt="image-20210412012355397" style="width:50%;" />
+<img src="assets/image-20210412012355397.png" alt="image-20210412012355397" style="width:400px;" />
 </div>
 
 **代码实现**
@@ -423,7 +423,7 @@ Return *the size of the largest subset of `strs` such that there are **at most**
 得到状态转移方程：
 
 <div align="center">
-<img src="assets/image-20210412012815922.png" alt="image-20210412012815922" style="width:50%;" />
+<img src="assets/image-20210412012815922.png" alt="image-20210412012815922" style="width:400px;" />
 </div>
 
 空间优化：
@@ -431,7 +431,7 @@ Return *the size of the largest subset of `strs` such that there are **at most**
 由于前 k 个字符串的状态仅与前 k-1 个字符串有关，因此定义一个二维数组，其中`dp[i][j]`分别可以表示`dp[k-1][i]`、`dp[k][i]`、`dp[k-1][j]`和`dp[k][j]`，状态转移方程为：
 
 <div align="center">
-<img src="assets/image-20210412012844460.png" alt="image-20210412012844460" style="width:50%;" />
+<img src="assets/image-20210412012844460.png" alt="image-20210412012844460" style="width:400px;" />
 </div>
 
 **代码实现**
