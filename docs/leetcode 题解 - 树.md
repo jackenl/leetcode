@@ -1,4 +1,5 @@
 # leetcode 题解 - 树
+
 - [leetcode 题解 - 树](#leetcode-题解---树)
   - [递归](#递归)
     - [104. Maximum Depth of Binary Tree](#104-maximum-depth-of-binary-tree)
@@ -32,6 +33,7 @@
     - [653. Two Sum IV - Input is a BST](#653-two-sum-iv---input-is-a-bst)
     - [530. Minimum Absolute Difference in BST](#530-minimum-absolute-difference-in-bst)
     - [501. Find Mode in Binary Search Tree](#501-find-mode-in-binary-search-tree)
+
 ## 递归
 
 ### [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)

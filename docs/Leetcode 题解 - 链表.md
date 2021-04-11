@@ -1,14 +1,36 @@
 # Leetcode 题解 - 链表
 
-## 1. 找出两个链表的交点
+- [Leetcode 题解 - 链表](#leetcode-题解---链表)
+  - [160. Intersection of Two Linked Lists](#160-intersection-of-two-linked-lists)
+  - [206. Reverse Linked List](#206-reverse-linked-list)
+  - [21. Merge Two Sorted Lists](#21-merge-two-sorted-lists)
+  - [83. Remove Duplicates from Sorted List](#83-remove-duplicates-from-sorted-list)
+  - [19. Remove Nth Node From End of List](#19-remove-nth-node-from-end-of-list)
+  - [24. Swap Nodes in Pairs](#24-swap-nodes-in-pairs)
+  - [445. Add Two Numbers II](#445-add-two-numbers-ii)
+  - [234. Palindrome Linked List](#234-palindrome-linked-list)
+  - [725. Split Linked List in Parts](#725-split-linked-list-in-parts)
+  - [328. Odd Even Linked List](#328-odd-even-linked-list)
 
-\160. Intersection of Two Linked Lists (Easy)
+## [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/description/)
 
-解题思路：
+**描述**
+
+Given the heads of two singly linked-lists `headA` and `headB`, return *the node at which the two lists intersect*. If the two linked lists have no intersection at all, return `null`.
+
+For example, the following two linked lists begin to intersect at node `c1`:
+
+![img](https://assets.leetcode.com/uploads/2021/03/05/160_statement.png)
+
+It is **guaranteed** that there are no cycles anywhere in the entire linked structure.
+
+**Note** that the linked lists must **retain their original structure** after the function returns.
+
+**解题思路**
 
 设链表 A 长度为 a + c，链表 B 长度为 b + c，其中 c 为尾部公共部分长度，可知 a + c + b = b + c + a；
 
-代码实现：
+**代码实现**
 
 ```js
 var getIntersectionNode = function(headA, headB) {
@@ -21,11 +43,13 @@ var getIntersectionNode = function(headA, headB) {
 };
 ```
 
-## 2. 链表反转
+## [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/description/)
 
-\206. Reverse Linked List (Easy)
+**描述**
 
-代码实现：
+Given the `head` of a singly linked list, reverse the list, and return *the reversed list*.
+
+**代码实现**
 
 递归：
 
@@ -57,11 +81,13 @@ var reverseList = function(head) {
 };
 ```
 
-## 3. 归并两个有序的链表
+## [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
 
-\21. Merge Two Sorted Lists (Easy)
+**描述**
 
-代码实现：
+Merge two sorted linked lists and return it as a **sorted** list. The list should be made by splicing together the nodes of the first two lists.
+
+**代码实现**
 
 递归：
 
@@ -101,11 +127,13 @@ var mergeTwoLists = function(l1, l2) {
 };
 ```
 
-## 4. 从有序链表中删除重复节点
+## [83. Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/)
 
-\83. Remove Duplicates from Sorted List (Easy)
+**描述**
 
-代码实现：
+Given the `head` of a sorted linked list, *delete all duplicates such that each element appears only once*. Return *the linked list **sorted** as well*.
+
+**代码实现**
 
 递归：
 
@@ -135,15 +163,19 @@ var deleteDuplicates = function(head) {
 };
 ```
 
-## 5. 删除链表的倒数第 n 个节点
+## [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/)
 
-\83. Remove Duplicates from Sorted List (Easy)
+**描述**
 
-解题思路：
+Given the `head` of a linked list, remove the `nth` node from the end of the list and return its head.
+
+**Follow up:** Could you do this in one pass?
+
+**解题思路**
 
 首先令指针 fast 指向链表的第 n + 1 个节点，指针 slow 指向头节点，然后同时逐步往下移动两个指针，直到指针 fast 指向尾节点，slow 指针的下一个节点就是倒数第 n 个节点，移除该节点。
 
-代码实现：
+**代码实现**
 
 ```js
 var removeNthFromEnd = function(head, n) {
@@ -162,11 +194,13 @@ var removeNthFromEnd = function(head, n) {
 };
 ```
 
-## 6. 交换链表中的相邻结点
+## [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/description/)
 
-\24. Swap Nodes in Pairs (Medium)
+**描述**
 
-代码实现：
+Given a linked list, swap every two adjacent nodes and return its head.
+
+**代码实现**
 
 ```js
 var swapPairs = function(head) {
@@ -186,11 +220,15 @@ var swapPairs = function(head) {
 };
 ```
 
-## 7. 链表求和
+## [445. Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/description/)
 
-\445. Add Two Numbers II (Medium)
+**描述**
 
-代码实现：
+You are given two **non-empty** linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+**代码实现**
 
 ```js
 var addTwoNumbers = function(l1, l2) {
@@ -217,15 +255,17 @@ var addTwoNumbers = function(l1, l2) {
 };
 ```
 
-## 8. 回文链表
+## [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
 
-\234. Palindrome Linked List (Easy)
+**描述**
 
-解题思路：
+Given the `head` of a singly linked list, return `true` if it is a palindrome.
+
+**解题思路**
 
 将链表平等分割，反转前半段，然后比较两半是否相等。
 
-代码实现：
+**代码实现**
 
 ```js
 var isPalindrome = function(head) {
@@ -252,11 +292,19 @@ var isPalindrome = function(head) {
 };
 ```
 
-## 9. 分隔链表
+## [725. Split Linked List in Parts](https://leetcode.com/problems/split-linked-list-in-parts/description/)
 
-\725. Split Linked List in Parts(Medium)
+**描述**
 
-题目描述：把链表分隔成 k 部分，每部分的长度都应该尽可能相同，排在前面的长度应该大于等于后面的。
+Given a (singly) linked list with head node `root`, write a function to split the linked list into `k` consecutive linked list "parts".
+
+The length of each part should be as equal as possible: no two parts should have a size differing by more than 1. This may lead to some parts being null.
+
+The parts should be in order of occurrence in the input list, and parts occurring earlier should always have a size greater than or equal parts occurring later.
+
+Return a List of ListNode's representing the linked list parts that are formed.
+
+**代码实现**
 
 ```js
 var splitListToParts = function(root, k) {
@@ -285,15 +333,21 @@ var splitListToParts = function(root, k) {
 };
 ```
 
-## 10. 链表元素按奇偶聚集
+## [328. Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/description/)
 
-\328. Odd Even Linked List (Medium)
+**描述**
 
-解题思路：
+Given the `head` of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return *the reordered list*.
+
+The **first** node is considered **odd**, and the **second** node is **even**, and so on.
+
+Note that the relative order inside both the even and odd groups should remain as it was in the input.
+
+**解题思路**
 
 逐个遍历链表节点，使odd指针永远都指向最后一个奇数节点，使even指针永远都指向最后一个偶数节点，分别构成奇数集和偶数集两条链表，连接两条链表。
 
-代码实现：
+**代码实现**
 
 ```js
 var oddEvenList = function(head) {
