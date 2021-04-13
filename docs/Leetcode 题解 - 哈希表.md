@@ -1,5 +1,11 @@
 # Leetcode 题解 - 哈希表
 
+- [Leetcode 题解 - 哈希表](#leetcode-题解---哈希表)
+  - [1. Two Sum](#1-two-sum)
+  - [217. Contains Duplicate](#217-contains-duplicate)
+  - [594. Longest Harmonious Subsequence](#594-longest-harmonious-subsequence)
+  - [128. Longest Consecutive Sequence](#128-longest-consecutive-sequence)
+
 ## [1. Two Sum](https://leetcode.com/problems/two-sum/description/)
 
 **描述**
