@@ -1,5 +1,14 @@
 # Leetcode 题解 - 图
 
+- [Leetcode 题解 - 图](#leetcode-题解---图)
+  - [二分图](#二分图)
+    - [785. Is Graph Bipartite?](#785-is-graph-bipartite)
+  - [拓扑排序](#拓扑排序)
+    - [207. Course Schedule](#207-course-schedule)
+    - [210. Course Schedule II](#210-course-schedule-ii)
+  - [并查集](#并查集)
+    - [684. Redundant Connection](#684-redundant-connection)
+
 ## 二分图
 
 ### [785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/description/)
