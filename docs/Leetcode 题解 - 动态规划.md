@@ -1,6 +1,6 @@
 # Leetcode 题解 - 动态规划
 
-- [Leetcode 题解 - 动态规划](#Leetcode 题解 - 动态规划)
+- [Leetcode 题解 - 动态规划](#leetcode-题解---动态规划)
   - [分割整数](#分割整数)
     - [343. Integer Break](#343-integer-break)
     - [279. Perfect Squares](#279-perfect-squares)
