@@ -737,7 +737,7 @@ var lowestCommonAncestor = function(root, p, q) {
 };
 ```
 
-### [108. Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/submissions/)
+### [108. Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
 
 **描述**
 
@@ -864,7 +864,7 @@ var getMinimumDifference = function(root) {
 };
 ```
 
-### [501. Find Mode in Binary Search Tree](https://leetcode.com/problems/find-mode-in-binary-search-tree/submissions/)
+### [501. Find Mode in Binary Search Tree](https://leetcode.com/problems/find-mode-in-binary-search-tree/)
 
 **描述**
 

@@ -8,7 +8,7 @@
   - [9. Palindrome Number](#9-palindrome-number)
   - [696. Count Binary Substrings](#696-count-binary-substrings)
 
-## [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/submissions/)
+## [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 
 **描述**
 
@@ -39,7 +39,7 @@ var isAnagram = function(s, t) {
 };
 ```
 
-## [409. Longest Palindrome](https://leetcode.com/problems/longest-palindrome/submissions/)
+## [409. Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)
 
 **描述**
 
@@ -107,7 +107,7 @@ var isIsomorphic = function(s, t) {
 };
 ```
 
-## [647. Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/submissions/)
+## [647. Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
 
 **描述**
 
@@ -169,7 +169,7 @@ var isPalindrome = function(x) {
 };
 ```
 
-## [696. Count Binary Substrings](https://leetcode.com/problems/count-binary-substrings/submissions/)
+## [696. Count Binary Substrings](https://leetcode.com/problems/count-binary-substrings/)
 
 **描述**
 

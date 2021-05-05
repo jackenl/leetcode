@@ -34,7 +34,7 @@ var twoSum = function(nums, target) {
 };
 ```
 
-## [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/submissions/)
+## [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 
 **描述**
 
@@ -85,7 +85,7 @@ var findLHS = function(nums) {
 };
 ```
 
-## [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/submissions/)
+## [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 
 **描述**
 
