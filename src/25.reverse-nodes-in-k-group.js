@@ -17,41 +17,34 @@
  * @param {number} k
  * @return {ListNode}
  */
-var reverseKGroup = function(head, k) {
-  let list = new ListNode(0);
-  let pre = list;
-  reverseKList(head, k);
-  return list.next;
+var reverseKGroup = function (head, k) {
+  let nHead = new ListNode(0, head);
+  nHead.next = head;
+  let pre = nHead, end = nHead;
 
-  function reverseKList(head, k) {
-    if (head === null) return;
-    let nHead = new ListNode(0);
-    let cur = head;
-    let i = 0;
-    while (i++ < k) {
-      if (cur === null) {
-        pre.next = reverse(nHead.next);
-        return;
-      }
-      let next = cur.next;
-      cur.next = nHead.next;
-      nHead.next = cur;
-      cur = next;
-    }
-    pre.next = nHead.next;
-    pre = head;
-    reverseKList(cur, k);
+  while (end.next !== null) {
+    for (let i = 0; i < k && end !== null; i++) end = end.next;
+    if (end === null) break;
+    let start = pre.next;
+    let next = end.next;
+    end.next = null;
+    pre.next = reverse(start);
+    start.next = next;
+    pre = start;
+    end = pre;
   }
+  return nHead.next;
 
   function reverse(head) {
-    if (head == null || head.next == null) return head;
-    
-    let next = head.next;
-    let newHead = reverse(next);
-    next.next = head;
-    head.next = null;
-    return newHead;
+    let pre = null;
+    let cur = head;
+    while (cur !== null) {
+      let next = cur.next;
+      cur.next = pre;
+      pre = cur;
+      cur = next;
+    }
+    return pre;
   }
 };
 // @lc code=end
-
