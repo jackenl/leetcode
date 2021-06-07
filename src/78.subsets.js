@@ -11,20 +11,18 @@
  */
 var subsets = function(nums) {
   let ans = [];
-  let arr = [];
-  let n = nums.length;
-  helper(0, nums, n);
+  helper(nums, [], 0);
   return ans;
 
-  function helper(cur, nums, n) {
-    if (cur === n) {
-      ans.push([].concat(arr));
+  function helper(nums, arr, cur) {
+    if (cur === nums.length) {
+      ans.push(arr.slice());
       return;
     }
+    helper(nums, arr, cur + 1); // 跳过当前元素
     arr.push(nums[cur]);
-    helper(cur + 1, nums, n); // 选择当前位置
+    helper(nums, arr, cur + 1); // 选择当前元素
     arr.pop();
-    helper(cur + 1, nums, n); // 不选择当前位置
   }
 };
 // @lc code=end
