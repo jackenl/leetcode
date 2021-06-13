@@ -10,23 +10,24 @@
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum = function(candidates, target) {
-  const ret = [];
-  dfs(candidates, target, [], 0);
-  return ret;
+var combinationSum = function (candidates, target) {
+  if (candidates.length === 0) return [];
+  let ans = [];
+  let n = candidates.length;
+  dfs(candidates, n, target, [], 0);
+  return ans;
 
-  function dfs(candidates, target, combine, index) {
+  function dfs(candidates, n, target, list, start) {
     if (target < 0) return;
-
     if (target === 0) {
-      ret.push(combine);
+      ans.push(list.slice());
       return;
     }
-    for (let i = index; i < candidates.length; i++) {
-      let arr = [...combine, candidates[i]];
-      dfs(candidates, target - candidates[i], arr, i);
+    for (let i = start; i < n; i++) {
+      list.push(candidates[i]);
+      dfs(candidates, n, target - candidates[i], list, i);
+      list.pop();
     }
   }
 };
 // @lc code=end
-

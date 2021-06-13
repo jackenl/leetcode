@@ -10,19 +10,21 @@
  * @return {number[][]}
  */
 var subsets = function(nums) {
+  if (nums.length === 0) return [];
   let ans = [];
-  helper(nums, [], 0);
+  let n = nums.length;
+  dfs(nums, n, [], 0);
   return ans;
 
-  function helper(nums, arr, cur) {
-    if (cur === nums.length) {
-      ans.push(arr.slice());
+  function dfs(nums, n, list, cur) {
+    if (cur === n) {
+      ans.push(list.slice());
       return;
     }
-    helper(nums, arr, cur + 1); // 跳过当前元素
-    arr.push(nums[cur]);
-    helper(nums, arr, cur + 1); // 选择当前元素
-    arr.pop();
+    dfs(nums, n, list, cur + 1);
+    list.push(nums[cur]);
+    dfs(nums, n, list, cur + 1);
+    list.pop();
   }
 };
 // @lc code=end

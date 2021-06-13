@@ -10,21 +10,23 @@
  * @return {number[][]}
  */
 var subsetsWithDup = function (nums) {
+  if (nums.length === 0) return [];
   let ans = [];
   nums.sort((a, b) => a - b);
-  helper(nums, [], 0);
+  let n = nums.length;
+  dfs(nums, n, [], 0, false);
   return ans;
 
-  function helper(nums, arr, cur, include) {
-    if (cur === nums.length) {
-      ans.push(arr.slice());
+  function dfs(nums, n, list, index, include) {
+    if (index === n) {
+      ans.push(list.slice());
       return;
     }
-    helper(nums, arr, cur + 1, false);
-    if (!include && cur > 0 && nums[cur] === nums[cur - 1]) return;
-    arr.push(nums[cur]);
-    helper(nums, arr, cur + 1, true);
-    arr.pop();
+    dfs(nums, n, list, index + 1, false);
+    if (index > 0 && nums[index] === nums[index - 1] && !include) return;
+    list.push(nums[index]);
+    dfs(nums, n, list, index + 1, true);
+    list.pop();
   }
 };
 // @lc code=end
