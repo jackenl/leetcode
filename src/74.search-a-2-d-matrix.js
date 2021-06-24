@@ -17,9 +17,15 @@ var searchMatrix = function(matrix, target) {
     i++;
   }
   if (i === m) return false;
-  for (let j = 0; j < n; j++) {
-    if (matrix[i][j] > target) break;
-    if (matrix[i][j] === target) return true;
+  let left = 0, right = n - 1;
+  while (left <= right) {
+    let mid = (left + right) >> 1;
+    if (matrix[i][mid] === target) return true;
+    if (matrix[i][mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
   }
   return false;
 };
