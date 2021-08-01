@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode id=121 lang=javascript
+ * @lc app=leetcode id=122 lang=javascript
  *
- * [121] Best Time to Buy and Sell Stock
+ * [122] Best Time to Buy and Sell Stock II
  */
 
 // @lc code=start
@@ -14,7 +14,7 @@ var maxProfit = function(prices) {
   let dp1 = 0, dp2 = -prices[0];
   for (let i = 1; i < n; i++) {
     dp1 = Math.max(dp1, dp2 + prices[i]);
-    dp2 = Math.max(dp2, -prices[i]);
+    dp2 = Math.max(dp2, dp1 - prices[i]);
   }
   return dp1;
 };
