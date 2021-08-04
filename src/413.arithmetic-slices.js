@@ -6,25 +6,23 @@
 
 // @lc code=start
 /**
- * @param {number[]} A
+ * @param {number[]} nums
  * @return {number}
  */
-var numberOfArithmeticSlices = function(A) {
-  if (A === null || A.length < 3) {
-    return 0;
-  }
-  const n = A.length;
-  const dp = new Array(n).fill(0);
+var numberOfArithmeticSlices = function(nums) {
+  const n = nums.length;
+  if (n < 3) return 0;
+  let ans = 0;
+  let dp = 0;
   for (let i = 2; i < n; i++) {
-    if (A[i] - A[i - 1] === A[i - 1] - A[i - 2]) {
-      dp[i] = dp[i - 1] + 1;
+    if (nums[i] - nums[i - 1] === nums[i - 1] - nums[i - 2]) {
+      dp += 1;
+      ans += dp;
+    } else {
+      dp = 0;
     }
   }
-  let total = 0;
-  for (let i = 2; i < n; i++) {
-    total += dp[i];
-  }
-  return total;
+  return ans;
 };
 // @lc code=end
 

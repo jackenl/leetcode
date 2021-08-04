@@ -10,27 +10,21 @@
  * @return {number}
  */
 var numDecodings = function(s) {
-  if (s === null || s.length === 0) {
-    return 0;
-  }
   const n = s.length;
-  const dp = new Array(n + 1).fill(0);
-  dp[0] = 1;
-  dp[1] = s.charAt(0) === '0' ? 0 : 1;
-  for (let i = 2; i <= n; i++) {
-    let one = Number(s.substring(i - 1, i));
-    if (one !== 0) {
-      dp[i] += dp[i - 1];
+  let dp1 = dp2 = s[0] > 0 ? 1 : 0;
+  let temp = 0;
+  for (let i = 1; i < n; i++) {
+    temp = 0;
+    if (s[i] > 0) {
+      temp += dp2;
     }
-    if (s.charAt(i - 2) === '0') {
-      continue;
+    if (s[i - 1] > 0 && s.substr(i - 1, 2) <= 26) {
+      temp += dp1;
     }
-    let two = Number(s.substring(i - 2, i));
-    if (two <= 26) {
-      dp[i] += dp[i - 2];
-    }
+    dp1 = dp2;
+    dp2 = temp;
   }
-  return dp[n];
+  return dp2;
 };
 // @lc code=end
 
