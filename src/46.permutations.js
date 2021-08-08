@@ -10,26 +10,28 @@
  * @return {number[][]}
  */
 var permute = function(nums) {
-  if (nums.length === 0) return [];
-  let ans = [];
-  let n = nums.length;
-  let visited = new Array(n).fill(0);
-  dfs(nums, n, visited, [], 0);
+  const ans = [];
+  const n = nums.length;
+  dfs(nums, n, 0);
   return ans;
 
-  function dfs(nums, n, visited, list, index) {
+  function dfs(nums, n, index) {
     if (index === n) {
-      ans.push(list.slice());
+      ans.push([].concat(nums));
       return;
     }
-    for (let i = 0; i < n; i++) {
-      if (visited[i] === 1) continue;
-      visited[i] = 1;
-      list.push(nums[i]);
-      dfs(nums, n, visited, list, index + 1);
-      visited[i] = 0;
-      list.pop();
+    for (let i = index; i < n; i++) {
+      swap(nums, index, i);
+      dfs(nums, n, index + 1);
+      swap(nums, index, i);
     }
+  }
+
+  function swap(nums, x, y) {
+    if (x === y) return;
+    const temp = nums[x];
+    nums[x] = nums[y];
+    nums[y] = temp;
   }
 };
 // @lc code=end
