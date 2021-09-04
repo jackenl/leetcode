@@ -11,25 +11,25 @@
  * @return {number}
  */
 var coinChange = function(coins, amount) {
-  if (coins.length === 0 || amount === 0) {
-    return 0;
-  }
-  let n = coins.length;
-  let dp = Array(amount + 1).fill(0);
-  for (let i = 0; i < n; i++) {
-    let coin = coins[i];
+  if (amount === 0) return 0;
+  const n = coins.length;
+  const dp = new Array(amount + 1).fill(Infinity);
+  for (let i = 1; i <= n; i++) {
+    const coin = coins[i - 1];
     for (let j = coin; j <= amount; j++) {
       if (j === coin) {
         dp[j] = 1;
-      } else if (dp[j] === 0 && dp[j - coin] !== 0) {
-        dp[j] = dp[j - coin] + 1;
-      } else if (dp[j - coin] !== 0) {
+      } else {
         dp[j] = Math.min(dp[j], dp[j - coin] + 1);
       }
     }
   }
-
-  return dp[amount] === 0 ? -1 : dp[amount];
+  return dp[amount] === Infinity ? -1 : dp[amount];
 };
 // @lc code=end
 
+function main() {
+  const ans = coinChange([1,2,5], 11);
+  console.log(ans);
+}
+main();

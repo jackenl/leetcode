@@ -10,31 +10,23 @@
  * @return {number}
  */
 var numSquares = function(n) {
-  let dp = new Array(n + 1).fill(0);
-  const squareList = generateSquareList(n);
-  for (let i = 1; i <= n; i++) {
-    let min = Number.MAX_SAFE_INTEGER;
-    for (let j = 0; j < squareList.length; j++) {
-      if (squareList[j] > i) {
-        break;
+  const dp = new Array(n + 1).fill(Number.MAX_SAFE_INTEGER);
+  for (let i = 1; i * i <= n; i++) {
+    const num = i * i;
+    for (let j = num; j <= n; j++) {
+      if (j === num) {
+        dp[j] = 1;
+      } else {
+        dp[j] = Math.min(dp[j], dp[j - num] + 1);
       }
-      min = Math.min(min, dp[i - squareList[j]] + 1);
     }
-    dp[i] = min;
   }
   return dp[n];
 };
-
-var generateSquareList = function(n) {
-  let square = 1;
-  let diff = 3;
-  const list = [];
-  while (square <= n) {
-    list.push(square);
-    square += diff;
-    diff += 2;
-  }
-  return list;
-}
 // @lc code=end
 
+function main() {
+  const ans = numSquares(12);
+  console.log(ans);
+}
+main();

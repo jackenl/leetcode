@@ -10,26 +10,27 @@
  * @return {boolean}
  */
 var canPartition = function(nums) {
-  let sums = nums.reduce((pre, cur) => {
-    return pre + cur;
-  }, 0);
-  if (sums % 2 !== 0) {
-    return false;
+  const n = nums.length;
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    sum += nums[i];
   }
-  let W = sums / 2;
-  let dp = new Array(W + 1).fill(false);
+  if (sum % 2 !== 0) return false;
+  const target = sum / 2;
+  const dp = new Array(target + 1).fill(false);
   dp[0] = true;
-  for (let i = 0; i <= nums.length; i++) {
-    let w = nums[i];
-    for (let j = W; j >= w; j--) {
-      dp[j] = dp[j] || dp[j - w];
+  for (let i = 1; i <= n; i++) {
+    const num = nums[i - 1];
+    for (let j = target; j >= num; j--) {
+      dp[j] = dp[j] || dp[j - num];
     }
   }
-  return dp[W];
+  return dp[target];
 };
 // @lc code=end
 
-// sums(p) 为整数队列和，sum(n) 为负数队列和
-// sums(p) - sums(n) = target
-// sums(p) - sums(n) + sums(p) + sums(n) = target + sums(s)
-// sums(p) = (target + sums(s)) * 2;
+function main() {
+  const ans = canPartition([1,5,11,5]);
+  console.log(ans);
+}
+main();
