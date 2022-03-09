@@ -23,10 +23,10 @@ var rotate = function(nums, k) {
   }
   
   const n = nums.length;
-  k %= n;
-  reverse(nums, 0, n - 1);
-  reverse(nums, 0, k - 1);
-  reverse(nums, k, n - 1);
+  k %= n; // for the case when k > n
+  reverse(nums, 0, n - 1); // reverse all arr
+  reverse(nums, 0, k - 1); // reverse 0 to k-1 indexes arr
+  reverse(nums, k, n - 1); // reverse k to n-1 indexes arr
 };
 // @lc code=end
 
