@@ -12,16 +12,20 @@
 var sortedSquares = function(nums) {
   const n = nums.length;
   const ans = new Array(n);
-  let i = 0, j = n - 1, pos = n - 1;
+  let i = 0, j = n - 1;
+  let index = n - 1;
+  let value1, value2;
   while (i <= j) {
-    if (nums[i] * nums[i] > nums[j] * nums[j]) {
-      ans[pos] = nums[i] * nums[i];
+    value1 = nums[i] * nums[i];
+    value2 = nums[j] * nums[j];
+    if (value1 > value2) {
+      ans[index] = value1;
       i++;
     } else {
-      ans[pos] = nums[j] * nums[j];
+      ans[index] = value2;
       j--;
     }
-    pos--;
+    index--;
   }
   return ans;
 };
