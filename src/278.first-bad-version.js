@@ -25,7 +25,7 @@ var solution = function (isBadVersion) {
    * @return {integer} The first bad version
    */
   return function (n) {
-    let left = 1, right = n;
+    let left = 0, right = n;
     while (left < right) {
       const mid = left + Math.floor((right - left) / 2);
       if (isBadVersion(mid)) {
