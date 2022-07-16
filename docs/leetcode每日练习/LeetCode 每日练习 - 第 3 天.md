@@ -1,0 +1,127 @@
+## LeetCode 每日练习 - 第 3 天
+
+### 背景
+
+最近闲来无事打开 LeetCode 挑战每日一题练习，发现由于刷题练习落下一段时间了，自己的算法思维竟变的如此生硬，随便一道 easy 题都能把自己搞得搔头抓耳。为了给自己增加点压力，并且能够锻炼到自己的算法思维，所以开展了本次刷题打卡系列——LeetCode 每日练习
+
+如果你也喜欢这种类型的打卡挑战，欢迎一起共勉！🎉🎉🎉
+
+Fighting！🚀🚀🚀
+
+#### [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)
+
+将两个升序链表合并为一个新的 **升序** 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+
+##### 解题思路
+
+**迭代**
+
+初始化一个链表 list，使用 cur 指向 list 起始节点，从起两个链表头开始逐个比对当前链表节点的大小，如果 list1 的节点小于等于 list2 节点，则让 cur 节点的 next 指针指向 list 当前节点，list1 当前节点位置右移到下一个节点，否则让 cur 节点的 next 指针指向 list2 当前节点，list2 当前节点位置右移到下一个节点，并且让 cur 指向 next 指针指向的节点，直到其中一个链表当前节点位置指向 null，最后让 cur 节点的 next 指针指向当前节点不为 null 的链表的剩余节点
+
+```ts
+function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+    if (list1 === null) return list2;
+    if (list2 === null) return list1;
+    const list = new ListNode();
+    let cur = list;
+    while (list1 !== null && list2 !== null) {
+        if (list1.val <= list2.val) {
+            cur.next = list1;
+            list1 = list1.next;
+        } else {
+            cur.next = list2;
+            list2 = list2.next;
+        }
+        cur = cur.next;
+    }
+    cur.next = list1 !== null ? list1 : list2;
+    return list.next;
+};
+```
+
+#### [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/)
+
+给你单链表的头节点 `head` ，请你反转链表，并返回反转后的链表。
+
+##### 解题思路
+
+**迭代**
+
+遍历真个链表，使用变量 pre、next 存储当前节点的前一个节点和后一个节点，将当前节点 next 指针指向前一个节点，保存当前节点为前一个节点，当前节点位置往后移，直到遍历完成，pre 成为反转链表的头引用
+
+```ts
+function reverseList(head: ListNode | null): ListNode | null {
+    let pre = null;
+    while (head !== null) {
+        const next = head.next;
+        head.next = pre;
+        pre = head;
+        head = next;
+    }
+    return pre;
+};
+```
+
+#### [876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/)
+
+给定一个头结点为 `head` 的非空单链表，返回链表的中间结点。
+
+如果有两个中间结点，则返回第二个中间结点。
+
+##### 解题思路
+
+**快慢指针**
+
+使用两指针 slow 和 fast 同时遍历链表，slow 每次走一步，fast 每次走两步，直到 fast 到达链表的末尾，slow 则处于中间节点
+
+```ts
+function middleNode(head: ListNode | null): ListNode | null {
+    let slow = head, fast = head;
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
+};
+```
+
+#### [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)
+
+给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
+
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+
+不允许修改 链表。
+
+##### 解题思路
+
+**快慢指针**
+
+使用两指针 slow 和 fast 同时遍历链表，slow 每次走一步，fast 每次走两步，如果是环形链表那么两支针必定会相遇，并且相遇在环上的某一个节点，设链表中环外部分的长度为 a。slow 指针进入环后，又走了 b 的距离与 fast 相遇。此时，fast 已经走完了环的 n 圈，fast 走过的总距离是 a + n(b + c) + b，slow 走过的距离是 a + b，得到等式：
+
+a + n(b + c) + b = 2(a + b)  =>  a = (n - 1)(b + c) + c
+
+![image.png](https://pic.leetcode-cn.com/1648037600-WNvNNt-image.png)
+
+可知从相遇点到入环点的距离加上 n−1 圈的环长，恰好等于从链表头部到入环点的距离
+
+所以当 slow 与 fast 相遇时，用一个新的变量 pos 从链表表头开始遍历，则 slow 与 pos 的相遇节点为链表的入环节点
+
+```ts
+function detectCycle(head: ListNode | null): ListNode | null {
+    let slow = head, fast = head;
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow === fast) {
+            let pos = head;
+            while (pos !== slow) {
+                slow = slow.next;
+                pos = pos.next;
+            }
+            return pos;
+        }
+    }
+    return null;
+};
+```
