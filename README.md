@@ -2,15 +2,15 @@
 
 ### LeetCode 每日练习
 
-- [1.LeetCode 每日练习.md](./docs/Leetcode%20每日练习/1.LeetCode%20每日练习.md)
+- [1.LeetCode 每日练习.md](./docs/LeetCode%20每日练习/1.LeetCode%20每日练习.md)
 
-- [2.LeetCode 每日练习.md](./docs/Leetcode%20每日练习/2.LeetCode%20每日练习.md)
+- [2.LeetCode 每日练习.md](./docs/LeetCode%20每日练习/2.LeetCode%20每日练习.md)
 
-- [3.LeetCode 每日练习.md](./docs/Leetcode%20每日练习/3.LeetCode%20每日练习.md)
+- [3.LeetCode 每日练习.md](./docs/LeetCode%20每日练习/3.LeetCode%20每日练习.md)
 
-- [4.LeetCode 每日练习.md](./docs/Leetcode%20每日练习/4.LeetCode%20每日练习.md)
+- [4.LeetCode 每日练习.md](./docs/LeetCode%20每日练习/4.LeetCode%20每日练习.md)
 
-- [5.LeetCode 每日练习.md](./docs/Leetcode%20每日练习/5.LeetCode%20每日练习.md)
+- [5.LeetCode 每日练习.md](./docs/LeetCode%20每日练习/5.LeetCode%20每日练习.md)
 
 ### LeetCode 题型题解
 
