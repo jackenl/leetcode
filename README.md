@@ -12,6 +12,8 @@
 
 - [5.LeetCode 每日练习.md](./docs/LeetCode%20每日练习/5.LeetCode%20每日练习.md)
 
+- [6.LeetCode 每日练习.md](./docs/LeetCode%20每日练习/6.LeetCode%20每日练习.md)
+
 ### LeetCode 题型题解
 
 - 数据结构
