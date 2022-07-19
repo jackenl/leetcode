@@ -1,6 +1,6 @@
 # Leetcode 知识总结
 
-## LeetCode 每日练习
+### LeetCode 每日练习
 
 - [1.LeetCode 每日练习.md](./docs/Leetcode%20每日练习/1.LeetCode%20每日练习.md)
 
@@ -12,7 +12,7 @@
 
 - [5.LeetCode 每日练习.md](./docs/Leetcode%20每日练习/5.LeetCode%20每日练习.md)
 
-## LeetCode 题型题解
+### LeetCode 题型题解
 
 - 数据结构
   
