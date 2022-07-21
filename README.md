@@ -8,6 +8,8 @@
 - <a href="./docs/LeetCode%20每日练习/4.LeetCode%20每日练习.md">4.LeetCode 每日练习.md</a>
 - <a href="./docs/LeetCode%20每日练习/5.LeetCode%20每日练习.md">5.LeetCode 每日练习.md</a>
 - <a href="./docs/LeetCode%20每日练习/6.LeetCode%20每日练习.md">6.LeetCode 每日练习.md</a>
+- <a href="./docs/LeetCode%20每日练习/7.LeetCode%20每日练习.md">7.LeetCode 每日练习.md</a>
+- <a href="./docs/LeetCode%20每日练习/8.LeetCode%20每日练习.md">8.LeetCode 每日练习.md</a>
 
 ### LeetCode 题型题解
 
